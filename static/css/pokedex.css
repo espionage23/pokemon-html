@@ -1,0 +1,124 @@
+/* 배경 이미지 */
+.mypage-background-container {
+    background-image: url('/static/images/mypage_back.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  /* 화면 크기에 맞게 배경 이미지 크기 조정 */
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* 헤더 */
+.mypage-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* 배너 아이템 공통 스타일 */
+.banner-item {
+    position: relative;
+    text-align: center;  /* 텍스트를 가운데 정렬 */
+}
+
+.banner-item img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+.banner-item h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: white;
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);  (이 부분을 제거) */
+}
+
+/* 컨텐츠 영역 */
+.mypage-content-container {
+    display: flex;               /* Flexbox를 사용하여 수평으로 배치 */
+    justify-content: center;  /* 왼쪽 정렬 */
+    align-items: center;         /* 수직 중앙 정렬 */
+    width: 1800px;
+    margin: 0 auto;
+    gap: 40px;                   /* 두 요소 간의 간격 설정 */
+}
+
+/* 포켓몬 이미지 */
+.poke-img {
+    width: 360px;
+    height: 360px;
+    margin-left: 109px;
+}
+
+.poke-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 이미지 비율을 유지하며 크기 조정 */
+}
+
+/* 포켓몬 정보 */
+.poke-info-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 이미지 비율 유지 */
+    display: block;
+}
+
+body > div > div.mypage-content-container > div.poke-info-container > div.poke-info-container > h4 {
+    position: absolute;
+    top: 62%;
+    left: 24.5%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: white;
+    width: 450px;
+    text-align: center;
+}
+
+body > div > div.mypage-content-container > div.poke-info-container > div.poke-info-container > div{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 450px;
+    font-size: 20px;
+    color: white;
+    top: 66%;
+    left: 10%;
+}
+
+body > div > div.mypage-content-container > div.poke-info-container > div.poke-info-container > div:nth-child(4){
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 450px;
+    height: 150px;
+    font-size: 20px;
+    color: white;
+    top: 74%;
+    left: 10%;
+    
+}
+
+
+
+/* 마이페이지 컨테이너 */
+.mypage-container {
+    background-image: url('/static/images/container.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 740px;
+    width: 1010px;
+}
