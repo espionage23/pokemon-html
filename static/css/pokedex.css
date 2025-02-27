@@ -3,7 +3,8 @@
     background-image: url('/static/images/mypage_back.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;  /* 화면 크기에 맞게 배경 이미지 크기 조정 */
+    background-size: cover;
+    /* 화면 크기에 맞게 배경 이미지 크기 조정 */
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -13,20 +14,46 @@
 }
 
 /* 헤더 */
+.mypage-banner-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    align-items: center;
+    height: 108px;
+    margin-left: 80px;
+}
+
+
 .mypage-banner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 1000px;
-    margin: 0 auto;
-    margin-top: 20px;
-    position: relative;
+
 }
+
+.closeBtn {
+    position: relative;
+    margin: 0 0 0 0;
+    background-image: url('/static/images/close.png');
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    left: 15%;
+}
+
+/* ---------------- 헤더 ---------------- */
+
+
 
 /* 배너 아이템 공통 스타일 */
 .banner-item {
     position: relative;
-    text-align: center;  /* 텍스트를 가운데 정렬 */
+    text-align: center;
+    width: 292px;
+    height: 108px;
+    /* 텍스트를 가운데 정렬 */
 }
 
 .banner-item img {
@@ -36,70 +63,104 @@
     height: auto;
 }
 
-.banner-item h3 {
+.banner-item span {
+    background-image: url('/static/images/green-bar.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 292px;
+    height: 108px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    /* Flexbox 사용 */
+    justify-content: center;
+    /* 수평 중앙 정렬 */
+    align-items: center;
+    /* 수직 중앙 정렬 */
     font-size: 32px;
     color: white;
-    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);  (이 부분을 제거) */
 }
+
+
+/* ---------------- 베너 ---------------- */
+
+
+
 
 /* 컨텐츠 영역 */
 .mypage-content-container {
-    display: flex;               /* Flexbox를 사용하여 수평으로 배치 */
-    justify-content: center;  /* 왼쪽 정렬 */
-    align-items: center;         /* 수직 중앙 정렬 */
+    display: flex;
+    /* Flexbox를 사용하여 수평으로 배치 */
+    justify-content: center;
+    /* 왼쪽 정렬 */
+    align-items: center;
+    /* 수직 중앙 정렬 */
     width: 1800px;
     margin: 0 auto;
-    gap: 40px;                   /* 두 요소 간의 간격 설정 */
+    gap: 40px;
+    /* 두 요소 간의 간격 설정 */
 }
 
 /* 포켓몬 이미지 */
 .poke-img {
-    width: 360px;
+    width: 575px;
     height: 360px;
-    margin-left: 109px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .poke-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* 이미지 비율을 유지하며 크기 조정 */
+    width: 360px;
+    height: 360px;
+    object-fit: cover;
+    /* 이미지 비율을 유지하며 크기 조정 */
 }
 
 /* 포켓몬 정보 */
-.poke-info-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* 이미지 비율 유지 */
-    display: block;
+.poke-infoview-container{
+    width: 575px;
+    height: 362px;
+    background-image: url('/static/images/wood-container.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    align-items: center;
+    /* 텍스트와 이미지를 수직으로 가운데 정렬 */
 }
 
-body > div > div.mypage-content-container > div.poke-info-container > div.poke-info-container > h4 {
+
+
+body>div>div.mypage-content-container>div.poke-info-container>div.poke-infoview-container>h4 {
     position: absolute;
-    top: 62%;
-    left: 24.5%;
+    /* 텍스트를 절대 위치로 설정 */
+    top: 20%;
+    /* 수직 중앙 정렬 */
+    left: 50%;
+    /* 수평 중앙 정렬 */
     transform: translate(-50%, -50%);
-    font-size: 32px;
+    /* 정확한 중앙 정렬을 위한 보정 */
     color: white;
-    width: 450px;
-    text-align: center;
+    /* 텍스트 색상 (배경과 대비되게 설정) */
+    font-size: 32px;
+    /* 텍스트 크기 조정 */
 }
 
-body > div > div.mypage-content-container > div.poke-info-container > div.poke-info-container > div{
+body>div>div.mypage-content-container>div.poke-info-container>div.poke-infoview-container>div:nth-child(2) {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    width: 450px;
-    font-size: 20px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    top: 66%;
-    left: 10%;
+    font-size: 20px;
+    width: 450px;
 }
 
-body > div > div.mypage-content-container > div.poke-info-container > div.poke-info-container > div:nth-child(4){
+body>div>div.mypage-content-container>div.poke-info-container>div.poke-infoview-container>div:nth-child(3) {
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -107,12 +168,44 @@ body > div > div.mypage-content-container > div.poke-info-container > div.poke-i
     height: 150px;
     font-size: 20px;
     color: white;
-    top: 74%;
-    left: 10%;
-    
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body>div>div.mypage-content-container>div.poke-info-container>div.view-bar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin-left: 80px;
+}
+
+body>div>div.mypage-content-container>div.poke-info-container>div.view-bar-container>div {
+    width: 175px;
+    height: 60px;
+    position: relative;
+    align-items: center;
+    /* 텍스트와 이미지를 수직으로 가운데 정렬 */
+}
+
+.view-bar-container div span {
+    position: absolute;
+    /* 텍스트를 절대 위치로 설정 */
+    top: 50%;
+    /* 수직 중앙 정렬 */
+    left: 50%;
+    /* 수평 중앙 정렬 */
+    transform: translate(-50%, -50%);
+    /* 정확한 중앙 정렬을 위한 보정 */
+    color: white;
+    /* 텍스트 색상 (배경과 대비되게 설정) */
+    font-size: 16px;
+    /* 텍스트 크기 조정 */
 }
 
 
+
+/* 우측 이미지 컨테이너 */
 
 /* 마이페이지 컨테이너 */
 .mypage-container {
@@ -121,4 +214,242 @@ body > div > div.mypage-content-container > div.poke-info-container > div.poke-i
     background-size: cover;
     height: 740px;
     width: 1010px;
+    margin-top: 42px;
 }
+
+
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 한 줄에 5개의 이미지를 배치 */
+    gap: 5px;
+    /* 이미지 간 간격 */
+    overflow-y: scroll;
+    /* 수직 스크롤 */
+    width: 800px;
+    height: 560px;
+    padding: 10px;
+    position: relative;
+    /* 상대적인 위치 설정 */
+    top: 13%;
+    /* 원하는 위치로 조정 (수정 가능) */
+    left: 11%;
+    /* 원하는 위치로 조정 (수정 가능) */
+}
+
+/* 웹킷 기반 브라우저에서 세로 스크롤바 스타일 */
+.image-container::-webkit-scrollbar {
+    width: 10px;
+    /* 스크롤바의 너비 설정 */
+}
+
+.image-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* 스크롤바의 색상 설정 */
+    border-radius: 10px;
+    /* 스크롤바의 모서리를 둥글게 설정 */
+    border: 2px solid transparent;
+    /* 스크롤바와 배경 사이의 공간을 투명하게 설정 */
+    background-clip: content-box;
+    /* 스크롤바의 내용 영역에 색상을 채우도록 설정 */
+}
+
+.image-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* 스크롤바를 호버할 때 색상 변경 */
+}
+
+.image-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* 스크롤바 배경 색상 설정 */
+    border-radius: 10px;
+    /* 배경 영역의 모서리 둥글게 설정 */
+}
+
+.image-container::-webkit-scrollbar-track:hover {
+    background-color: #e0e0e0;
+    /* 스크롤바 배경을 호버할 때 색상 변경 */
+}
+
+
+.image-container div {
+    width: 150px;
+    /* 이미지 너비 155px */
+    height: 150px;
+    /* 이미지 높이 155px */
+    overflow: hidden;
+    /* 이미지가 크기 변경 시 영역 밖으로 넘지 않도록 설정 */
+    position: relative;
+    /* 자식 요소들에 대해 상대적인 위치 설정 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* 부드러운 애니메이션 효과 */
+}
+
+.image-container div:hover {
+    transform: scale(1.1);
+    /* 마우스를 올렸을 때 이미지가 10% 확대됨 */
+}
+
+.image-container div img {
+    width: 150px;
+    /* 이미지 너비 155px */
+    height: 150px;
+    /* 이미지 높이 155px */
+    object-fit: cover;
+    /* 이미지가 정사각형 영역에 맞게 잘리도록 설정 */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 뷰 탭 */
+.mypage-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.mypage-banner-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+    gap: 50px;
+}
+
+.item-info-text-container {
+    width: 800px;
+    height: 450px;
+    padding: 10px;
+    position: relative;
+    /* 상대적인 위치 설정 */
+    top: 5%;
+    /* 원하는 위치로 조정 (수정 가능) */
+    left: 11%;
+    /* 원하는 위치로 조정 (수정 가능) */
+    font-size: 32px;
+    color: white;
+    /* 이미지 간 간격 */
+    overflow-y: scroll;
+}
+
+/* 포켓몬 리스트 테이블 */
+.poke-info-text-container {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    height: 400px; /* 최대 높이 설정 */
+    padding-right: 20px; /* 스크롤바와 내용 간 간격 */
+    text-align: center; /* 테이블 내 텍스트 중앙 정렬 */
+    margin-top: 60px;
+}
+
+.poke-table {
+    width: 800px;
+    border-collapse: collapse;
+    font-size: 32px;
+    color: white;
+    margin-left: 30px;
+}
+
+.poke-table tr {
+    height: 70px;
+}
+
+.poke-table th,
+.poke-table td {
+    padding: 8px;
+    text-align: center;
+    /* 수평 정렬 */
+    vertical-align: middle;
+    /* 수직 정렬 */
+}
+
+.poke-table th {
+    width: 50px;
+    /* 제목 너비 */
+}
+
+.poke-table td {
+    width: 150px;
+    /* 내용 너비 */
+    text-align: left;
+    /* 내용은 왼쪽 정렬 */
+}
+
+/* 포켓몬 리스트 테이블 */
+
+
+/* 아이템 리스트 테이블 */
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.item-table th,
+.item-table td {
+    padding: 8px;
+    text-align: center;
+    /* 수평 정렬 */
+    vertical-align: middle;
+    /* 수직 정렬 */
+}
+
+.item-table th {
+    width: 50px;/* 제목 너비 */
+}
+
+.item-table td {
+    height: 100px;
+}
+
+/* .item-info-text-container의 스크롤바 스타일 */
+.item-info-text-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.item-info-text-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.item-info-text-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.item-info-text-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* 포켓몬 정보 */
+.item-view-info-container {
+    width: 575px;
+    height: 740px;
+    background-image: url('/static/images/item-container.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    align-items: center;
+    /* 텍스트와 이미지를 수직으로 가운데 정렬 */
+}
+
+
+
+/* 포켓몬 리스트 테이블 */

@@ -1,8 +1,13 @@
 @import url('//fonts.googleapis.com/earlyaccess/hanna.css');
 
+@import url('/static/css/reset.css');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;  
+}
+
+body{
   font-family: 'Hanna', sans-serif;
 }
