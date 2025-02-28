@@ -13,80 +13,143 @@
     <div class="mypage-background-container">
         <div class="mypage-banner-container">
             <div class="mypage-banner">
-                <div class="banner-item">
+                <div class="banner-item" data-tab="pokedex">
                     <span>도감</span>
                 </div>
-                <div class="banner-item">
+                <div class="banner-item" data-tab="item">
                     <span>아이템</span>
                 </div>
-                <div class="banner-item">
+                <div class="banner-item" data-tab="expedition">
                     <span>원정대</span>
                 </div>
             </div>
             <div class="closeBtn"></div>
         </div>
-        <div class="mypage-content-container">
-            <div class="item-view-info-container">
 
+        <div class="mypage-content-container">
+            
+            <div class="item-view-info-container">
+                <div class="item-img">
+                    <img src="/static/images/monsterball.png">
+                </div>
+                <div class="item-text-container">
+                    <div class="item-text">
+                        <div class="item-name">몬스터볼</div>
+                        <div class="item-info">아이템 내용</div>
+                    </div>
+                </div>
             </div>
             <div class="mypage-container">
                 <div class="mypage-tab">
                     <div class="mypage-banner-tab">
-                        <div class="banner-item">
+                        <div class="banner-item" data-tab="monsterball-item">
                             <span>몬스터볼</span>
                         </div>
-                        <div class="banner-item">
+                        <div class="banner-item" data-tab="revive-item">
                             <span>회복 아이템</span>
                         </div>
-                        <div class="banner-item">
+                        <div class="banner-item" data-tab="battle-item">
                             <span>배틀 아이템</span>
                         </div>
                     </div>
                 </div>
                 <div class="item-info-text-container">
-                    <table class="item-table">
-                        <thead>
-                            <tr>
-                                <th>이미지</th>
-                                <th>이름</tj>
-                                <th>수량</tj>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>이미지</td>
-                                <td>몬스터볼</td>
-                                <td>1개</td>
-                            </tr>
-                            <tr>
-                                <td>이미지</td>
-                                <td>몬스터볼</td>
-                                <td>1개</td>
-                            </tr>
-                            <tr>
-                                <td>이미지</td>
-                                <td>몬스터볼</td>
-                                <td>1개</td>
-                            </tr>
-                            <tr>
-                                <td>이미지</td>
-                                <td>몬스터볼</td>
-                                <td>1개</td>
-                            </tr>
-                            <tr>
-                                <td>이미지</td>
-                                <td>몬스터볼</td>
-                                <td>1개</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <!-- Each tab content can be wrapped in a div and initially hidden -->
+                    <div class="tab-content" id="monsterball-item-content">
+                        <table class="item-table">
+                            <thead>
+                                <tr>
+                                    <th>이미지</th>
+                                    <th>이름</th>
+                                    <th>수량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>이미지</td>
+                                    <td>몬스터볼</td>
+                                    <td>1개</td>
+                                </tr>
+                                <!-- 추가 항목들 -->
+                            </tbody>
+                        </table>
+                    </div>
 
+                    <div class="tab-content" id="revive-item-content">
+                        <table class="item-table">
+                            <thead>
+                                <tr>
+                                    <th>이미지</th>
+                                    <th>이름</th>
+                                    <th>수량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>이미지</td>
+                                    <td>회복 아이템</td>
+                                    <td>5개</td>
+                                </tr>
+                                <!-- 추가 항목들 -->
+                            </tbody>
+                        </table>
+                    </div>
 
+                    <div class="tab-content" id="battle-item-content">
+                        <table class="item-table">
+                            <thead>
+                                <tr>
+                                    <th>이미지</th>
+                                    <th>이름</th>
+                                    <th>수량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>이미지</td>
+                                    <td>배틀 아이템</td>
+                                    <td>3개</td>
+                                </tr>
+                                <!-- 추가 항목들 -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div> <!-- mypage-container-->
         </div>
 
     </div>
+
+    <script>
+        // 탭을 클릭할 때 동작하는 스크립트
+        const tabItems = document.querySelectorAll('.mypage-banner-tab .banner-item');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        // 탭 클릭 시 해당 탭만 보여주고 나머지는 숨김
+        tabItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const tabId = item.getAttribute('data-tab'); // 클릭된 탭의 id 가져오기
+                const targetContent = document.getElementById(`${tabId}-content`); // 해당하는 콘텐츠
+
+                // 모든 탭 콘텐츠 숨기기
+                tabContents.forEach(content => {
+                    content.style.display = 'none';
+                });
+
+                // 선택된 탭 콘텐츠만 보이게 하기
+                targetContent.style.display = 'block';
+
+                // 탭 활성화 스타일 추가
+                tabItems.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                item.classList.add('active');
+            });
+        });
+
+        // 페이지 로드시 기본적으로 첫 번째 탭 활성화
+        tabItems[0].click();
+    </script>
 </body>
 
 </html>

@@ -4,71 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/pokedex.css">
-    <title>마이페이지</title>
 </head>
 
 <body>
     <div class="mypage-background-container">
         <div class="mypage-banner-container">
             <div class="mypage-banner">
-                <div class="banner-item">
+                <div class="banner-item" data-tab="pokedex">
                     <span>도감</span>
                 </div>
-                <div class="banner-item">
+                <div class="banner-item" data-tab="item">
                     <span>아이템</span>
                 </div>
-                <div class="banner-item">
+                <div class="banner-item" data-tab="expedition">
                     <span>원정대</span>
                 </div>
             </div>
             <div class="closeBtn"></div>
         </div>
-        <div class="mypage-content-container">
-            <div class="poke-info-container">
-                <div class="poke-img">
-                    <img src="/static/images/image 1.png" alt="Poke Image" />
-                </div>
-                <div class="poke-infoview-container">
-                    <h4>냄새꼬</h4>
-                    <div>
-                        <div>속성: 독, 풀</div>
-                        <div>키: 0.8m</div>
-                        <div>무게: 8.6kg</div>
+
+        <div class="mypage-content-container" id="mypage-content">
+            <div class="mypage-background-container">
+                <div class="mypage-banner-container">
+                    <div class="mypage-banner">
+                        <div class="banner-item" data-tab="pokedex">
+                            <span>도감</span>
+                        </div>
+                        <div class="banner-item" data-tab="item">
+                            <span>아이템</span>
+                        </div>
+                        <div class="banner-item" data-tab="expedition">
+                            <span>원정대</span>
+                        </div>
                     </div>
-                    <div>조금씩 배어 나오는 것은 침이 아니다. 꿀 같은 즙으로 먹잇감을 유인하는 것이다.조금씩 배어 나오는 것은 침이 아니다. 꿀 같은 즙으로 먹잇감을 유인하는 것이다.조금씩
-                        배어 나오는 것은 침이 아니다. 꿀 같은 즙으로 먹잇감을 유인하는 것이다.</div>
+                    <div class="closeBtn"></div>
                 </div>
-                <div class="view-bar-container">
-                    <div>z
-                        <span>자세히</span>
-                        <img src="/static/images/wood-bar.png" />
+        
+                <div class="mypage-content-container">
+        
+                    <div class="poke-info-container">
+                        <div class="poke-img">
+                            <img src="/static/images/image 1.png" alt="Poke Image" />
+                        </div>
+                        <div class="poke-infoview-container">
+                            <h4>냄새꼬</h4>
+                            <div>
+                                <div>속성: 독, 풀</div>
+                                <div>키: 0.8m</div>
+                                <div>무게: 8.6kg</div>
+                            </div>
+                            <div>조금씩 배어 나오는 것은 침이 아니다. 꿀 같은 즙으로 먹잇감을 유인하는 것이다.조금씩 배어 나오는 것은 침이 아니다. 꿀 같은 즙으로 먹잇감을 유인하는 것이다.조금씩
+                                배어 나오는 것은 침이 아니다. 꿀 같은 즙으로 먹잇감을 유인하는 것이다.</div>
+                        </div>
+                        <div class="view-bar-container">
+                            <div>
+                                <span>자세히</span>
+                                <img src="/static/images/wood-bar.png" />
+                            </div>
+                            <div>
+                                <img src="/static/images/wood-bar.png" />
+                                <span>내 포켓몬</span>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <img src="/static/images/wood-bar.png" />
-                        <span>내 포켓몬</span>
+                    <div class="mypage-container">
+                        <div class="image-container">
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <div><img src="/static/images/image 1.png" alt="이미지1"></div>
+                            <!-- 추가 이미지들 -->
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="mypage-container">
-                <div class="image-container">
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <div><img src="/static/images/image 1.png" alt="이미지1"></div>
-                    <!-- 추가 이미지들 -->
                 </div>
             </div>
         </div>
+
     </div>
+
+    <script>
+        // 탭을 클릭할 때 동작하는 스크립트
+        const tabItems = document.querySelectorAll('.mypage-banner .banner-item');
+        const contentContainer = document.getElementById('mypage-content');
+
+        // 탭 클릭 시 해당 콘텐츠를 동적으로 불러오기
+        tabItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const tabId = item.getAttribute('data-tab'); // 클릭된 탭의 ID 가져오기
+                
+                // 모든 탭에서 'active' 클래스를 제거하고 클릭된 탭에 'active' 클래스 추가
+                tabItems.forEach(tab => tab.classList.remove('active'));
+                item.classList.add('active');
+
+                // 동적으로 콘텐츠 불러오기
+                loadContent(tabId);
+            });
+        });
+
+        // 기본적으로 도감 탭을 불러오도록 설정
+        document.addEventListener('DOMContentLoaded', () => {
+            loadContent('pokedex');
+            document.querySelector('.mypage-banner .banner-item[data-tab="pokedex"]').classList.add('active');
+        });
+
+        // 탭 콘텐츠 로딩 함수
+        function loadContent(tabId) {
+            fetch(`${tabId}.html`) // 각 탭에 맞는 HTML 파일 로드
+                .then(response => response.text())
+                .then(data => {
+                    contentContainer.innerHTML = data; // 로드된 HTML을 콘텐츠 영역에 삽입
+                })
+                .catch(error => {
+                    console.error('탭 콘텐츠 로딩 오류:', error);
+                    contentContainer.innerHTML = '<p>내용을 불러오는 데 오류가 발생했습니다.</p>';
+                });
+        }
+    </script>
 </body>
 
 </html>
